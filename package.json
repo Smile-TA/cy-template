@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "cy:open": "export $(cat .env | xargs ) && cypress open"
+  },
+  "devDependencies": {
+    "@saucelabs/cypress-visual-plugin": "latest",
+    "cypress": "^13.6.3"
+  }
+}
