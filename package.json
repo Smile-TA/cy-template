@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "cy:open": "export $(cat .env | xargs ) && cypress open"
+    "cy:open": "export $(grep -v '^\\s*#' .env | xargs) && cypress open"
   },
   "devDependencies": {
     "@saucelabs/cypress-visual-plugin": "latest",

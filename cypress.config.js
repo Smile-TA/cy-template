@@ -5,7 +5,9 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: process.env.BASE_URL,
     saucelabs: {
-      buildName: process.env.PROD ? "Baseline -- Prod" : "Baseline -- Staging",
+      buildName: process.env.BASE_URL.includes("staging")
+        ? "Baseline -- Prod"
+        : "Baseline -- Staging",
       project: process.env.PROJECT_NAME,
     },
     setupNodeEvents(on, config) {
