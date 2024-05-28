@@ -7,3 +7,4 @@ tests_output/
 artifacts/
 screenshots/
 cypress/fixtures/pages.json
+cypress/downloads
