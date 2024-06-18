@@ -20,7 +20,7 @@ import "./commands";
 // require('./commands')
 
 import "@saucelabs/cypress-visual-plugin/commands";
-
+import "@cypress-audit/lighthouse/commands";
 
 beforeEach(() => {
   // ignore errors from the site itself

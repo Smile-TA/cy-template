@@ -3,6 +3,7 @@
     "cy:open": "export $(grep -v '^\\s*#' .env | xargs) && cypress open"
   },
   "devDependencies": {
+    "@cypress-audit/lighthouse": "^1.4.2",
     "@saucelabs/cypress-visual-plugin": "latest",
     "cypress": "^13.6.3"
   }
