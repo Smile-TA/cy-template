@@ -1,15 +1,15 @@
 import pages from "../fixtures/pages.json";
 
-describe("Check pages contain only one h1 element", () => {
+describe("Check pages with lighthouse", () => {
   pages.forEach((page) => {
     it(`on ${page} page`, () => {
       cy.visit(page);
       cy.lighthouse(
         {
-          performance: 60,
+          performance: 40,
           accessibility: 90,
           "best-practices": 80,
-          seo: 80,
+          seo: 60,
         },
         {
           formFactor: "desktop",

@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "cy:open": "export $(grep -v '^\\s*#' .env | xargs) && cypress open"
+    "cy:open": "export $(grep -v '^\\s*#' .env | xargs) && cypress open",
+    "cy:lh": "export $(grep -v '^\\s*#' .env | xargs) && cypress run --headless --browser chrome --spec cypress/e2e/lh.cy.js"
   },
   "devDependencies": {
     "@cypress-audit/lighthouse": "^1.4.2",
