@@ -22,6 +22,7 @@ describe("Check pages with lighthouse", () => {
           },
         }
       );
+      cy.wait(50)
     });
   });
 });

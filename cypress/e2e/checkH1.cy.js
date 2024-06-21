@@ -7,6 +7,7 @@ describe("Check pages contain only one h1 element", () => {
       cy.get("h1").then(($el) => {
         expect($el.length).to.be.eq(1);
       });
+      cy.wait(50)
     });
   });
 });

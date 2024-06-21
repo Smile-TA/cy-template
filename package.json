@@ -1,6 +1,7 @@
 {
   "scripts": {
     "cy:open": "export $(grep -v '^\\s*#' .env | xargs) && cypress open",
+    "cy:run": "export $(grep -v '^\\s*#' .env | xargs) && cypress run --headless --browser chrome",
     "cy:lh": "export $(grep -v '^\\s*#' .env | xargs) && cypress run --headless --browser chrome --spec cypress/e2e/lh.cy.js"
   },
   "devDependencies": {

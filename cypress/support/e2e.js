@@ -28,4 +28,14 @@ beforeEach(() => {
   Cypress.on("uncaught:exception", () => {
     return false;
   });
+  if (Cypress.env("withSession")) {
+    cy.session("login", () => {
+      cy.visit("wp-login.php");
+      cy.get("#user_login").type(Cypress.env("USR_NAME"));
+      cy.get("#user_login").clear().type(Cypress.env("USR_NAME"));
+      cy.get("#user_pass").type(Cypress.env("USR_PSW"));
+      cy.get("form").contains("Log In").click();
+      cy.url().should("contain", "/wp-admin/");
+    });
+  }
 });

@@ -11,6 +11,7 @@ describe("Check pages for robots on prod", function () {
         .should("have.attr", "content")
         .and("not.contain", "noindex, nofollow");
     });
+    cy.wait(50)
   });
 });
 
@@ -25,5 +26,6 @@ describe("Check pages for robots on staging", function () {
         .should("have.attr", "content")
         .and("contain", "noindex, nofollow");
     });
+    cy.wait(50)
   });
 });

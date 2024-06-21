@@ -4,6 +4,9 @@ const { CypressSauceVisual } = require("@saucelabs/cypress-visual-plugin");
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
 
 module.exports = defineConfig({
+  env: {
+    withSession: true,
+  },
   e2e: {
     baseUrl: process.env.BASE_URL,
     excludeSpecPattern: ["cypress/e2e/vrt.cy.js"],
