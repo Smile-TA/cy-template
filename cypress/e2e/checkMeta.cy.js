@@ -10,7 +10,6 @@ describe("Check pages for meta", () => {
       cy.get('meta[property*="og:description"]')
         .should("have.attr", "content")
         .should("have.length.greaterThan", 0);
-      cy.wait(50);
     });
   });
 });
