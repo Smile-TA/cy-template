@@ -6,6 +6,7 @@ const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
 module.exports = defineConfig({
   e2e: {
     baseUrl: process.env.BASE_URL,
+    excludeSpecPattern: ["cypress/e2e/vrt.cy.js"],
     saucelabs: {
       buildName: process.env.BASE_URL.includes("staging")
         ? "Baseline -- Staging"

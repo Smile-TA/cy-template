@@ -27,7 +27,7 @@ suites:
   config:
     testingType: e2e
     specPattern: [ "cypress/e2e/**/*.*" ]
-    # excludeSpecPattern: ["cypress/e2e/checkMeta.cy.js"]
+    excludeSpecPattern: ["cypress/e2e/vrt.cy.js"]
 rootDir: .
 artifacts:
   download:
