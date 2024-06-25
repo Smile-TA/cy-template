@@ -5,7 +5,7 @@ const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
 
 module.exports = defineConfig({
   env: {
-    withSession: true,
+    withSession: false,
   },
   e2e: {
     baseUrl: process.env.BASE_URL,
