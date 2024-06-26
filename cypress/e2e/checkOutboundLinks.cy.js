@@ -6,6 +6,8 @@ describe("Check outbound links open in a new tab", () => {
       cy.visit(page);
       cy.get("a").then((links) => {
         const filteredLinks = [];
+        let baseUrl = Cypress.config().baseUrl;
+        baseUrl = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
         for (const link of links) {
           const href = link.getAttribute("href");
           if (
@@ -14,7 +16,7 @@ describe("Check outbound links open in a new tab", () => {
             href === "/" ||
             href.slice(0, 4) === "tel:" ||
             href.slice(0, 7) === "mailto:" ||
-            getLinkBaseURL(href) === Cypress.config().baseUrl
+            getLinkBaseURL(href) === baseUrl
           ) {
             continue;
           }
@@ -32,6 +34,6 @@ const getLinkBaseURL = (href) => {
   let pathArray = href.split("/");
   let protocol = pathArray[0];
   let host = pathArray[2];
-  let url = protocol + "//" + host + "/";
-  return url;
+  let url = protocol + "//" + host;
+  return url.endsWith("/") ? url.slice(0, -1) : url;
 };
